@@ -2,10 +2,11 @@ import bs4
 from bs4 import BeautifulSoup
 from typing import List, Tuple, Dict
 import requests
-import json
 import os
+import json
+import time
 
-class LeMondeScraping:
+class LOpinionScraping:
     
     def __init__(self, keywords: List[Tuple]) -> None:
         """Scrap articles from Revue Risques. Set a number of keywords as well
@@ -15,7 +16,7 @@ class LeMondeScraping:
         """
         self.keywords = keywords
         self.scraped_url = self.init_links_memory()
-    
+        
     def scrap(self) -> Dict:
         """Scrap content from of links retrieved from keywords search.
         """
@@ -30,8 +31,6 @@ class LeMondeScraping:
                 content.extend(self.scrap_page(soup))
             output[keyword] = content
         return output
-        
-        return cleaned_par
     
     def get_all_links(self, keyword: str, nb_pages: int) -> List[str]:
         """Iterate through number of pages defined by `keyword`, 
@@ -39,14 +38,14 @@ class LeMondeScraping:
         """
         all_links = []
         for i in range(1, nb_pages + 1):
-            url = f'https://www.lemonde.fr/recherche/?search_keywords={keyword}&start_at=19/12/1944&end_at=20/12/2020&search_sort=relevance_desc&page={i}'
+            url = f'https://www.lopinion.fr/search/site/{keyword}/page/{i}/0'
             try :
                 soup = bs4.BeautifulSoup(requests.get(url).text)
-                page_links = self._get_links(soup)
+                page_links = self.get_links(soup)
                 all_links.extend(self.compare_set_scraped(page_links))
             except:
                 break
-        with open('links/set_url_risques.json', 'w') as f:
+        with open('links/set_url_l_opinion.json', 'w') as f:
             json.dump(self.scraped_url, f, indent=4)
         f.close()
         return all_links
@@ -66,38 +65,36 @@ class LeMondeScraping:
     def scrap_page(self, soup: BeautifulSoup) -> List[str]:
         """Scrap specific page and return a list of paragraphs.
         """
-        par = soup.find_all('p', class_='article__paragraph')
+        par = soup.find('div', class_='article_body').find_all('p')
         content = []
         for p in par:
-            content.append(self._clean_par(p.text))
+            content.append(self.clean_par(p.text))
         return content
-        
+    
     @staticmethod
-    def _get_links(soup: BeautifulSoup) -> List[str]:
+    def get_links(soup: BeautifulSoup) -> List[str]:
         """Get all links in a page.
         """
         list_href = []
-        sections = soup.find_all('section', class_='teaser teaser--inline-picture')
+        sections = soup.find_all('a', class_='article-snippet_link')
         for section in sections :
-            if section.find('span', class_='icon__premium') is None:
-                list_href.append(section.find('a', class_='teaser__link').get('href'))
+            list_href.append('https://www.lopinion.fr'+section.get('href'))
         return list_href
-                       
-    @staticmethod
-    def _clean_par(par: str) -> str:
-        cleaned_par = par.replace('\xa0', ' ').replace('(...)', '')
-        return cleaned_par
     
     @staticmethod
     def init_links_memory() -> List[str]:
-        if not os.path.exists('links/set_url_le_monde.json'):
-            with open('links/set_url_le_monde.json', 'w') as f:
+        if not os.path.exists('links/set_url_l_opinion.json'):
+            with open('links/set_url_l_opinion.json', 'w') as f:
                 scraped_url=[]
                 json.dump(scraped_url, f)
             f.close()
         else :
-            with open('links/set_url_le_monde.json', 'r') as f:
+            with open('links/set_url_l_opinion.json', 'r') as f:
                 scraped_url = json.load(f)
             f.close()
         return scraped_url
-        
+    
+    @staticmethod
+    def clean_par(par: str) -> str:
+        cleaned_par = par.replace('\xa0', ' ').replace('(...)', '')
+        return cleaned_par
