@@ -40,20 +40,20 @@ We used a list of starting user accounts, a few main french insurance companies.
 
 #### <b>Dataset structure</b>
 
-| Newspaper                 | Number of scrapped articles | Average sequence length | Maximum sequence length | Minimum sequence length | 
-|---------------------------|:---------------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
-| Assurland                 |                             |                         |                         |                         |
-| FFA                       |                             |                         |                         |                         |
-| L'Agefi                   | 181                         | 497                     | 1413                    | 50                      |
-| L'Obs                     | 522                         | 442                     | 17451                   | 2                       |
-| L'opinion                 | 636                         | 452                     | 2440                    | 10                      |
-| Le Figaro                 | 1698                        | 391                     | 1009                    | 3                       |
-| Le Monde                  | 828                         | 347                     | 3038                    | 3                       |
-| Marianne                  | 56                          | 668                     | 13494                   | 23                      |
-| Ouest France              | 561                         | 250                     | 2170                    | 8                       |
-| Risques                   | 252                         | 474                     | 5519                    | 2                       |
-| Tribune de l'Assurance    | 5                           | 431                     | 1455                    | 70                      |
-| Université de l'Assurance | 42                          | 331                     | 1475                    | 5                       |
+| Newspaper                 | Size of the JSON file (MB)| Number of scrapped articles | Average sequence length | Maximum sequence length | Minimum sequence length | 
+|---------------------------|:-------------------------:|:---------------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
+| Assurland                 |                           |                             |                         |                         |                         |
+| FFA                       | 4.8                       |                             |                         |                         |                         |
+| L'Agefi                   | 0.443                     | 181                         | 497                     | 1413                    | 50                      |
+| L'Obs                     | 2.6                       | 522                         | 442                     | 17451                   | 2                       |
+| L'opinion                 | 3.4                       | 636                         | 452                     | 2440                    | 10                      |
+| Le Figaro                 | 0.316                     | 1698                        | 391                     | 1009                    | 3                       |
+| Le Monde                  | 3.5                       | 828                         | 347                     | 3038                    | 3                       |
+| Marianne                  | 0.239                     | 56                          | 668                     | 13494                   | 23                      |
+| Ouest France              | 0.153                     | 561                         | 250                     | 2170                    | 8                       |
+| Risques                   | 1.7                       | 252                         | 474                     | 5519                    | 2                       |
+| Tribune de l'Assurance    | 0.024                     | 5                           | 431                     | 1455                    | 70                      |
+| Université de l'Assurance | 0.092                     | 42                          | 331                     | 1475                    | 5                       |
 
 
 <br>
