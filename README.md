@@ -17,11 +17,19 @@ We used this insurance corpus to train several embedding models using [Flair](ht
 We used Wikipedia hands-on API for retrieving text files of a given subject. We limited our keyword based research in Wikipedia's article titles. We also scrapped all the articles contained in categories named after each keyword.
 
 ### Twitter Source 
-We used a list of starting user accounts, a few main french insurance companies. For each of these companies, we search for tweets containing a list of keywords and stored mentions (users direclty cited in a tweet by a '@'). For each verified mentioned accounts, we operated the same research. 
+ We used [Twint](https://github.com/twintproject/twint) to bypass Twitter developper authentification, scrap tweets from a profile using a keyword and retrieving profile informations. We used a list of starting user accounts, a few main French insurance companies.For each of these companies, we search for tweets containing a list of keywords and stored mentions (users direclty cited in a tweet by a '@'). For each verified mentioned accounts, we operated the same research. We may enlarge our search by using the top 10 most used hashtags in the scrapped tweets. 
+
+<ul>
+<li> <b> Starting accounts</b> : @AXA, @Groupama, @AG2RLAMONDIALE, @Matmut, @Groupe_VYV, @MAIF, @GroupeMacif, @MAAFAssurances, @MMAssurances, @hmutuelle, @CNP_Assurances
+<li> <b> Keywords </b> : assurance, assureur, mutuelle, prévoyance, réassurance, réassureur, actuariat, actuaire
+<li> <b> Size of the JSON file </b> : 3 MB
+<li> <b> Number of scrapped tweets </b> : 1584
+<li> <b> Number of scrapped accounts </b> : 109
+<li> <b> Average tweet length </b> : 164 words
+<li> <b> Top 5 leads from most used hashtags </b> : #complémentairesanté, #protectionsociale, #AssureurMutualiste, #habitation, #Mutualisme
+</ul>
 
 ### Specialized and generalized newspapers
-
-
 #### <b> Description by source </b>
 | Newspaper                 | Keyword research | Restricted to title | Best matches | Premium option | 
 |---------------------------|:----------------:|:-------------------:|:------------:|:--------------:|
@@ -38,9 +46,10 @@ We used a list of starting user accounts, a few main french insurance companies.
 | Tribune de l'Assurance    |:heavy_check_mark:|                     |              |:heavy_check_mark:| 
 | Université de l'Assurance |:heavy_check_mark:|                     |              |                |
 
+
 #### <b>Dataset structure</b>
 
-| Newspaper                 | Size of the JSON file (MB)| Number of scrapped articles | Average sequence length | Maximum sequence length | Minimum sequence length | 
+| Newspaper                 | Size of the JSON file (MB)| Number of scrapped articles | Average sequence length (words)| Maximum sequence length (words)| Minimum sequence length (words)| 
 |---------------------------|:-------------------------:|:---------------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
 | Assurland                 |                           |                             |                         |                         |                         |
 | FFA                       | 4.8                       |                             |                         |                         |                         |
