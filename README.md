@@ -62,7 +62,7 @@ We used a list of starting user accounts, a few main french insurance companies.
 #### <b>Topics by newspaper</b>
 
 
-| Newspaper                 | assurance | assureur | réassurance | réassureur | mutuelle | mutualité | prévoyance | actuariat | actuaire | axa |
+| Newspaper                 | <font size="1"> assurance </font> | <font size="1">assureur</font> | <font size="1">réassurance</font> | <font size="1">réassureur</font> | <font size="1">mutuelle</font> | <font size="1">mutualité</font> | <font size="1">prévoyance</font> | <font size="1">actuariat</font> | <font size="1">actuaire</font> | <font size="1">axa</font> |
 |---------------------------|:---------:|:--------:|:-----------:|:----------:|:--------:|:---------:|:----------:|:---------:|:--------:|:---:|
 | FFA                       |           |          |             |            |          |           |            |           |          |     |
 | L'Agefi                   | 144       | 94       | 52          | 170        | 99       | 57        | 157        | 4         | 15       | 42  |
