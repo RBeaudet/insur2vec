@@ -62,17 +62,30 @@ We used a list of starting user accounts, a few main french insurance companies.
 #### <b>Topics by newspaper</b>
 
 
-| Newspaper                 | <font size="1"> assurance </font> | <font size="1">assureur</font> | <font size="1">réassurance</font> | <font size="1">réassureur</font> | <font size="1">mutuelle</font> | <font size="1">mutualité</font> | <font size="1">prévoyance</font> | <font size="1">actuariat</font> | <font size="1">actuaire</font> | <font size="1">axa</font> |
-|---------------------------|:---------:|:--------:|:-----------:|:----------:|:--------:|:---------:|:----------:|:---------:|:--------:|:---:|
-| FFA                       |           |          |             |            |          |           |            |           |          |     |
-| L'Agefi                   | 144       | 94       | 52          | 170        | 99       | 57        | 157        | 4         | 15       | 42  |
-| L'Obs                     | 3522      | 424      | 0           | 28         | 1193     | 170       | 0          | 0         | 55       | 181 |
-| L'opinion                 | 1222      | 1208     | 1097        | 140        | 1253     | 809       | 992        | 91        | 241      | 211 |
-| Le Figaro                 | 259       | 52       | 76          | 38         | 58       | 101       | 0          | 32        | 115      | 16  |
-| Le Monde                  | 6360      | 0        | 0           | 0          | 778      | 0         | 0          | 0         | 1255     | 1006|
-| Marianne                  | 235       | 24       | 0           | 0          | 66       | 19        | 11         | 0         | 0        | 0   |
-| Ouest France              | 726       | 0        | 0           | 0          | 0        | 0         | 0          | 0         | 0        | 0   |
-| Risques                   | 3239      | 80       | 0           | 0          | 7        | 0         | 0          | 0         | 0        | 2   |
-| Tribune de l'Assurance    | 43        | 0        | 0           | 0          | 0        | 0         | 8          | 0         | 0        | 0   |
-| Université de l'Assurance | 249       | 6        | 0           | 0          | 0        | 0         | 8          | 0         | 0        | 0   |
+| Newspaper                 | assurance | assureur | réassurance | réassureur | mutuelle |
+|---------------------------|:---------:|:--------:|:-----------:|:----------:|:--------:|
+| FFA                       |           |          |             |            |          |
+| L'Agefi                   | 144       | 94       | 52          | 170        | 99       |
+| L'Obs                     | 3522      | 424      | 0           | 28         | 1193     |
+| L'opinion                 | 1222      | 1208     | 1097        | 140        | 1253     |
+| Le Figaro                 | 259       | 52       | 76          | 38         | 58       |
+| Le Monde                  | 6360      | 0        | 0           | 0          | 778      |
+| Marianne                  | 235       | 24       | 0           | 0          | 66       |
+| Ouest France              | 726       | 0        | 0           | 0          | 0        |
+| Risques                   | 3239      | 80       | 0           | 0          | 7        |
+| Tribune de l'Assurance    | 43        | 0        | 0           | 0          | 0        |
+| Université de l'Assurance | 249       | 6        | 0           | 0          | 0        |
 
+| Newspaper                 | mutualité | prévoyance | actuariat | actuaire | axa |
+|---------------------------|:---------:|:----------:|:---------:|:--------:|:---:|
+| FFA                       |           |            |           |          |     |
+| L'Agefi                   | 57        | 157        | 4         | 15       | 42  |
+| L'Obs                     | 170       | 0          | 0         | 55       | 181 |
+| L'opinion                 | 809       | 992        | 91        | 241      | 211 |
+| Le Figaro                 | 101       | 0          | 32        | 115      | 16  |
+| Le Monde                  | 0         | 0          | 0         | 1255     | 1006|
+| Marianne                  | 19        | 11         | 0         | 0        | 0   |
+| Ouest France              | 0         | 0          | 0         | 0        | 0   |
+| Risques                   | 0         | 0          | 0         | 0        | 2   |
+| Tribune de l'Assurance    | 0         | 8          | 0         | 0        | 0   |
+| Université de l'Assurance | 0         | 0          | 0         | 0        | 0   |
