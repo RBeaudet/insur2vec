@@ -1,23 +1,21 @@
 # Scraping for Insurance Corpus v2
 
 ## Installation 
-Use a [pipenv](https://pipenv.pypa.io/en/latest/) for quick install of requirements enumerated in the Pipfile. 
+Use a [pipenv](https://pipenv.pypa.io/en/latest/) for quick install of requirements enumerated in the Pipfile.
 
-## Usage
-We used this insurance corpus to train several embedding models using [Flair](https://github.com/flairNLP/flair). 
-<ul>
-<li> Fine-tuning BERT, Stacked and Flair Embedding
-<li> Training these same embeddings from scratch
-<li> Make a custom STT model using Azure API
-</ul>
-
-## Description of the resulting corpus 
+## Description of the resulting corpus (FR)
 
 ### Wikipedia source
-We used Wikipedia hands-on API for retrieving text files of a given subject. We limited our keyword based research in Wikipedia's article titles. We also scrapped all the articles contained in categories named after each keyword.
+We used Wikipedia hands-on API for retrieving text files of a given subject. We limited our keyword based research in Wikipedia's article titles.
+
+<ul>
+<li> <b> Keywords </b> : TODO
+<li> <b> Size of the JSON file </b> : TODO
+<li> <b> Number of scrapped articles </b> : TODO
+</ul>
 
 ### Twitter Source 
- We used [Twint](https://github.com/twintproject/twint) to bypass Twitter developper authentification, scrap tweets from a profile using a keyword and retrieving profile informations. We used a list of starting user accounts, a few main French insurance companies.For each of these companies, we search for tweets containing a list of keywords and stored mentions (users direclty cited in a tweet by a '@'). For each verified mentioned accounts, we operated the same research. We may enlarge our search by using the top 10 most used hashtags in the scrapped tweets. 
+ We used [Twint](https://github.com/twintproject/twint) to bypass Twitter developper authentification, scrap tweets from a profile using a keyword and retrieving profile informations. We used a list of starting user accounts, a few main French insurance companies. For each of these companies, we search for tweets containing a list of keywords and stored mentions (users direclty cited in a tweet by a '@'). For each verified mentioned accounts, we operated the same research. We may enlarge our search by using the top 10 most used hashtags in the scrapped tweets. 
 
 <ul>
 <li> <b> Starting accounts</b> : @AXA, @Groupama, @AG2RLAMONDIALE, @Matmut, @Groupe_VYV, @MAIF, @GroupeMacif, @MAAFAssurances, @MMAssurances, @hmutuelle, @CNP_Assurances
@@ -31,21 +29,22 @@ We used Wikipedia hands-on API for retrieving text files of a given subject. We 
 
 ### Specialized and generalized newspapers
 #### <b> Description by source </b>
-| Newspaper                 | Keyword research | Restricted to title | Best matches | Premium option | 
-|---------------------------|:----------------:|:-------------------:|:------------:|:--------------:|
-| Assurland                 |                  |                     |              |                |
-| FFA                       |:heavy_check_mark:|                     |:heavy_check_mark:|                |
-| L'Agefi                   |:heavy_check_mark:|                     |              |                |
-| L'Obs                     |:heavy_check_mark:|                     |              |                |
-| L'opinion                 |:heavy_check_mark:|                     |:heavy_check_mark:|                |
-| Le Figaro                 |:heavy_check_mark:|                     |:heavy_check_mark:|:heavy_check_mark:| 
-| Le Monde                  |:heavy_check_mark:|                     |              |:heavy_check_mark:| 
-| Marianne                  |:heavy_check_mark:|                     |              |                |
-| Ouest France              |:heavy_check_mark:|                     |              |:heavy_check_mark:| 
-| Risques                   |:heavy_check_mark:|                     |              |                |
-| Tribune de l'Assurance    |:heavy_check_mark:|                     |              |:heavy_check_mark:| 
-| Université de l'Assurance |:heavy_check_mark:|                     |              |                |
+| Newspaper                 | Keyword research | Restricted to title | Best matches | Premium option | All articles |
+|---------------------------|:----------------:|:-------------------:|:------------:|:--------------:|:-----:|
+| Assurland                 |                  |                     |              |                | :heavy_check_mark: |
+| FFA                       |:heavy_check_mark:|                     |:heavy_check_mark:|                | |
+| L'Agefi                   |:heavy_check_mark:|                     |              |                | |
+| L'Obs                     |:heavy_check_mark:|                     |              |                | |
+| L'opinion                 |:heavy_check_mark:|                     |:heavy_check_mark:|                | |
+| Le Figaro                 |:heavy_check_mark:|                     |:heavy_check_mark:|:heavy_check_mark:| | 
+| Le Monde                  |:heavy_check_mark:|                     |              |:heavy_check_mark:| |
+| Marianne                  |:heavy_check_mark:|                     |              |                | |
+| Ouest France              |:heavy_check_mark:|                     |              |:heavy_check_mark:| | 
+| Risques                   |:heavy_check_mark:|                     |              |                | |
+| Tribune de l'Assurance    |:heavy_check_mark:|                     |              |:heavy_check_mark:| | 
+| Université de l'Assurance |:heavy_check_mark:|                     |              |                | |
 
+*N.B. Best matches may include false positive because retrieved articles are based on the website internal search best match.*
 
 #### <b>Dataset structure</b>
 
@@ -63,7 +62,7 @@ We used Wikipedia hands-on API for retrieving text files of a given subject. We 
 | Risques                   | 1.7                       | 252                         | 474                     | 5519                    | 2                       |
 | Tribune de l'Assurance    | 0.024                     | 5                           | 431                     | 1455                    | 70                      |
 | Université de l'Assurance | 0.092                     | 42                          | 331                     | 1475                    | 5                       |
-
+| Total | | | | | |
 
 <br>
 </br>

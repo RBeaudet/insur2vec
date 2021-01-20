@@ -5,7 +5,7 @@ class WikipediaScraping:
 
     def __init__(self, language: str = "fr") -> None:
         self.language = language
-        
+
         self.undesirable_sections = None
         if self.language == "fr":
             self.undesirable_sections = [
@@ -24,7 +24,7 @@ class WikipediaScraping:
                     lines = lines[:index]
 
         # remove section titles
-        return " ".join([l for l in lines if l[:2] != "=="]) 
+        return " ".join([l for l in lines if l[:2] != "=="])
 
     def scrap_from_query(self, query: str, limit: int, references: bool = False) -> dict:
         wikipedia.set_lang(self.language)
@@ -42,7 +42,7 @@ class WikipediaScraping:
                 try:
                     urls_ref = wikipedia.page(title).references
                     output[title.lower()]['references'] = urls_ref
-                except:
+                except Exception:
                     output[title.lower()]['references'] = []
-        
+
         return output
